@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @myidea.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @myidea.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@myidea.picture_url, :width => 600) if @myidea.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_myidea_path(@myidea) %> |
+<%= link_to 'Back', myideas_path %>

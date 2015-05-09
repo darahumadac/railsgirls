@@ -1,0 +1,29 @@
+<h1>Listing myideas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @myideas.each do |myidea| %>
+      <tr>
+        <td><%= myidea.name %></td>
+        <td><%= myidea.description %></td>
+        <td><%= myidea.picture %></td>
+        <td><%= link_to 'Show', myidea %></td>
+        <td><%= link_to 'Edit', edit_myidea_path(myidea) %></td>
+        <td><%= link_to 'Destroy', myidea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Myidea', new_myidea_path %>
